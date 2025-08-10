@@ -1,0 +1,83 @@
+
+   @import url('.././../../../assets/fontawesome/css/all.min.css');
+              body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #fffdfa;
+        }
+        
+        .hero-header {
+            margin-top: -100px;
+            padding-top: 150px;
+            background-size: cover;
+        }
+
+        .header-carousel::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: calc(50% + 45px);
+            height: 100%;
+            background: #ba9f8c;
+            z-index: -1;
+        }
+
+        @media (max-width: 1024px) {
+            .header-carousel::before {
+                width: 100%;
+                height: calc(100% - 90px);
+            }
+        }
+        
+        .rtl-support {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .arabic-font {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .border-custom {
+            border-color: #c5ae9e;
+        }
+        
+        .hover-bg-custom:hover {
+            background-color: #c5ae9e;
+        }
+        
+        .carousel-image {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .carousel-control {
+            background-color: rgba(255, 255, 255, 0.5) !important;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-control:hover {
+            background-color: rgba(255, 255, 255, 0.8) !important;
+        }
+        
+        .logo-text {
+            color: #333;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+        
+        .whatsapp-button {
+            border-color: #333;
+            color: #333;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #333;
+            color: #fffdfa;
+        }
