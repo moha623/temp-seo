@@ -13,14 +13,14 @@ dir="rtl"
     <div class="flex flex-col md:flex-row gap-4 mt-20">
         <a
           href="#"
-          class="px-6 py-3 text-white rounded-md transition"
-          style="background-color: #c5ae9e; "
+          class="px-6 py-3 text-white text-2xl  transition underline"
+           
         >
           جدولة مكالمة
         </a>
         <a
           href="#"
-          class="px-6 py-3 bg-white rounded-md transition border border-[#c5ae9e] text-[#c5ae9e] hover:bg-[#f5f0ed]"
+          class="px-6 py-3  text-2xl text-white underline  "
         >
           تواصل عبر واتساب
         </a>
@@ -33,35 +33,37 @@ dir="rtl"
 </div>
 <div dir="rtl" class="bg-gray-900 text-gray-300 pt-20">
   <div class="max-w-screen-xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <!-- switch from grid to flex-col on mobile -->
+    <div class="flex flex-col items-center md:grid md:grid-cols-2 lg:grid-cols-4 gap-12">
       <!-- First Column -->
-      <div class="animate-fade-in" style="animation-delay: 0.1s">
-        <a href="index.html" class="inline-block mb-3">
-          <h1 class="text-white text-2xl font-bold">استشارات أمين</h1>
+      <div class="animate-fade-in w-full md:w-auto" style="animation-delay: 0.1s">
+        <a   class="md:inline-block mb-3 text-center md:text-right">
+          <h1 class="text-white text-2xl font-bold   ">استشارات أمين</h1>
         </a>
-        <p class="mb-0 text-gray-400 leading-relaxed text-right">
+        <p class="mb-0 text-gray-400 leading-relaxed   text-center md:text-right">
           تم تنفيذ هذا المشروع بشكل احترافي وبمواصفات عالية الجودة. نحن ملتزمون
           بتقديم أفضل الخدمات لعملائنا الكرام.
         </p>
       </div>
 
       <!-- Second Column -->
-      <div class="animate-fade-in" style="animation-delay: 0.3s">
-        <h5 class="text-white mb-6 text-lg font-semibold text-right">
+      <div class="animate-fade-in w-full md:w-auto" style="animation-delay: 0.3s">
+        <h5 class="text-white mb-6 text-lg font-semibold text-center md:text-right
+  ">
           ابقى على اتصال
         </h5>
-        <p class="flex items-center mb-2 justify-start">
-          <i class="fas fa-phone-alt ml-3 text-[#c5ae9e]"></i>+012 345 67890
+        <p class="flex items-center mb-2 justify-center    md:justify-start ">
+          <i class="fas fa-phone-alt ml-3 text-[#c5ae9e] text-center md:text-right"></i>+012 345 67890
         </p>
-        <p class="flex items-center mb-2 justify-start">
+        <p class="flex items-center mb-2 justify-center    md:justify-start">
           <i class="fas fa-map-marker-alt ml-3 text-[#c5ae9e]"></i> شارع،
           نيويورك،
         </p>
 
-        <p class="flex items-center mb-4 justify-start">
+        <p class="flex items-center mb-4 justify-center    md:justify-start">
           <i class="fas fa-envelope ml-3 text-[#c5ae9e]"></i>infoexample.com
         </p>
-        <div class="flex space-x-reverse space-x-2 pt-2 justify-start">
+        <div class="flex space-x-reverse space-x-2 pt-2 justify-center    md:justify-start">
           <a
             href="#"
             class="border-2 border-[#c5ae9e] text-[#c5ae9e] hover:bg-[#c5ae9e] hover:text-white transition rounded w-10 h-10 flex items-center justify-center"
@@ -96,11 +98,11 @@ dir="rtl"
       </div>
 
       <!-- Third Column -->
-      <div class="animate-fade-in" style="animation-delay: 0.5s">
-        <h5 class="text-white mb-6 text-lg font-semibold text-right">
+      <div class="animate-fade-in w-full md:w-auto text-center md:text-right" style="animation-delay: 0.5s">
+        <h5 class="text-white mb-6 text-lg font-semibold text-center md:text-right">
           روابط مهمة
         </h5>
-        <nav class="flex flex-col space-y-2 text-right">
+        <nav class="flex flex-col space-y-2 text-center md:text-right">
           <a href="#" class="text-gray-400 hover:text-white transition"
             >من نحن</a
           >
@@ -120,11 +122,11 @@ dir="rtl"
       </div>
 
       <!-- Fourth Column -->
-      <div class="animate-fade-in" style="animation-delay: 0.7s">
-        <h5 class="text-white mb-6 text-lg font-semibold text-right">
+      <div class="animate-fade-in w-full md:w-auto" style="animation-delay: 0.7s">
+        <h5 class="text-white mb-6 text-lg font-semibold text-center md:text-right">
           خدماتنا
         </h5>
-        <nav class="flex flex-col space-y-2 text-right">
+        <nav class="flex flex-col space-y-2 text-center md:text-right">
           <a href="#" class="text-gray-400 hover:text-white transition"
             >تصميم داخلي</a
           >
@@ -190,4 +192,5 @@ dir="rtl"
     </div>
   </div>
 </div>
+
 <!-- Footer End -->

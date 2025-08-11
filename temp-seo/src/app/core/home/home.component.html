@@ -1,65 +1,419 @@
-    <!-- Features Row -->
-    <div class="bg-white py-16">
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
-          خدماتنا الاستشارية
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Service 1 -->
+<!-- Hero Section -->
+<section
+  class="bg-gradient-to-r from-[#c5ae9e] to-[#fffdfa] py-20 mt-10 text-gray-800"
+  dir="rtl"
+>
+  <div
+    class="max-w-7xl my-10 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center"
+  >
+    <div class="md:w-1/2 mb-10 md:mb-0 leading-8">
+      <h1 class="text-4xl md:text-5xl font-bold  mb-6">
+        حلول استشارية متكاملة لتحقيق
+        <span class="text-[#c5ae9e]">أهداف أعمالك</span>
+      </h1>
+      <p class="text-xl mb-8 opacity-90">
+        نقدم حلولاً استشارية احترافية لدفع نمو شركتك وتعزيز مكانتك التنافسية في
+        السوق
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href="#"
+          class="bg-[#8c7b6b] hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg text-center transition-colors"
+        >
+          اطلب استشارة مجانية
+        </a>
+        <a
+          href="#"
+          class="bg-white/80 hover:bg-white text-gray-800 border border-gray-300 font-bold py-3 px-8 rounded-lg text-center transition-colors"
+        >
+          تعرف على خدماتنا
+        </a>
+      </div>
+    </div>
+    <div class="md:w-1/2 flex justify-center">
+      <div class="relative">
+        <div
+          class="bg-white/20 rounded-full w-80 h-80 flex items-center justify-center"
+        >
           <div
-            class="bg-custom-bg p-8 rounded-lg shadow-sm border border-gray-100 text-right"
+            class="bg-white/30 rounded-full w-64 h-64 flex items-center justify-center"
           >
-            <div class="text-custom-text text-4xl mb-4 text-center">
-              <i class="fas fa-chart-line text-[#b7b6b4]"></i>
+            <div
+              class="bg-gray-200 border-2 border-dashed rounded-xl w-48 h-48 flex items-center justify-center"
+            >
+              <i class="fas fa-chart-network text-6xl text-white"></i>
             </div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-3">
-              استراتيجية الأعمال
-            </h3>
-            <p class="text-gray-600">
-              نطور استراتيجيات أعمال فعالة لتحقيق أهدافك طويلة المدى وتفوق على
-              المنافسين.
-            </p>
           </div>
+        </div>
+        <div class="absolute -top-6 -right-6 bg-white rounded-lg p-4 shadow-lg">
+          <div class="text-3xl font-bold">15+</div>
+          <div class="text-sm">سنة خبرة</div>
+        </div>
+        <div
+          class="absolute -bottom-6 -left-6 bg-white text-primary rounded-lg p-4 shadow-lg"
+        >
+          <div class="text-3xl font-bold">200+</div>
+          <div class="text-sm">عميل راضٍ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- primary: '#1a365d',
+                        secondary: '#2c5282',
+                        [#c5ae9e]: '#c5ae9e',
+                        'light-bg': '#fffdfa',
+                        '[#2d3748]': '#2d3748',
+                        'dark-brown': '#8c7b6b' -->
+<!-- Services Section - Enhanced -->
 
-          <!-- Service 2 -->
+<!-- Hero Section -->
+<div class="hero-header w-full pb-5 mb-5 shadow-sm">
+  <div class="container mx-auto px-4 py-5">
+    <!-- Main Content Row -->
+    <div
+      class="flex flex-col lg:flex-row-reverse gap-5 lg:gap-0 items-center mb-5"
+      dir="ltr"
+    >
+      <!-- Right Column - Text Content -->
+      <div class="w-full lg:w-1/2 text-right">
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-4">
+          نحن نجعل من <span class="text-[#b7b6b4] text-center">منزلك</span> أفضل
+        </h1>
+      </div>
+      <div class="w-full lg:w-1/2 mt-10 lg:mt-0">
+        <div
+          class="header-carousel relative pt-[45px] pb-[45px] pl-[90px] pr-0"
+        >
+          <!-- Carousel -->
           <div
-            class="bg-custom-bg p-8 rounded-lg shadow-sm border border-gray-100 text-right"
+            id="animation-carousel"
+            class="relative w-full h-full"
+            data-carousel="static"
           >
-            <div class="text-custom-text text-4xl mb-4 text-center">
-              <i class="fas fa-hand-holding-usd text-[#b7b6b4]"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-3">
-              الاستشارات المالية
-            </h3>
-            <p class="text-gray-600">
-              نصائح مالية خبيرة لتحسين استثماراتك وتقليل التكاليف وزيادة
-              الربحية.
-            </p>
-          </div>
+            <!-- Carousel wrapper -->
+            <div class="relative w-full h-[400px] overflow-hidden rounded-lg">
+              <div
+                *ngFor="let image of images; let i = index"
+                [class.absolute]="true"
+                [class.block]="isActive(i)"
+                [class.hidden]="!isActive(i)"
+                class="w-full h-full"
+              >
+                <img
+                  [src]="image.src"
+                  [alt]="image.alt"
+                  class="w-full h-full object-cover shadow-xl"
+                />
+              </div>
 
-          <!-- Service 3 -->
-          <div
-            class="bg-custom-bg p-8 rounded-lg shadow-sm border border-gray-100 text-right"
-          >
-            <div class="text-custom-text text-4xl mb-4 text-center">
-              <i class="fas fa-users text-[#b7b6b4]"></i>
+              <!-- Slider controls -->
+              <button
+                type="button"
+                class="absolute top-1/2 start-4 z-30 flex items-center justify-center cursor-pointer group focus:outline-none carousel-control"
+                (click)="showPrev()"
+                aria-label="السابق"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-10 h-10 rounded-full"
+                >
+                  <svg
+                    class="w-4 h-4 text-gray-800"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 6 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 1 1 5l4 4"
+                    />
+                  </svg>
+                </span>
+              </button>
+
+              <button
+                type="button"
+                class="absolute top-1/2 end-4 z-30 flex items-center justify-center cursor-pointer group focus:outline-none carousel-control"
+                (click)="showNext()"
+                aria-label="التالي"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-10 h-10 rounded-full"
+                >
+                  <svg
+                    class="w-4 h-4 text-gray-800"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 6 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 9 4-4-4-4"
+                    />
+                  </svg>
+                </span>
+              </button>
             </div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-3">
-              استشارات الموارد البشرية
-            </h3>
-            <p class="text-gray-600">
-              بناء قوة عاملة قوية مع حلولنا للموارد البشرية بما في ذلك اكتساب
-              المواهب وتطوير الموظفين.
-            </p>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+<section class="py-20 bg-[#fffdfa]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-[#c5ae9e] font-bold text-lg">خدماتنا المتميزة</span>
+      <h2 class="text-4xl font-bold text-gray-800 mt-3 mb-6">
+        خدماتنا الاستشارية
+      </h2>
+      <p class="max-w-2xl mx-auto text-gray-600 text-lg">
+        نقدم مجموعة واسعة من الخدمات الاستشارية التي تساعد مؤسستك على النمو
+        والتطور وتحقيق أهدافها الاستراتيجية
+      </p>
+    </div>
 
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Service 1 - Enhanced -->
+      <div
+        class="service-card bg-white p-8 rounded-xl shadow-md border border-gray-100 text-right hover:border-[#c5ae9e]"
+      >
+        <div class="text-[#2d3748] text-4xl mb-4 text-center relative">
+          <div
+            class="absolute top-0 left-0 w-16 h-16 bg-[#c5ae9e]/10 rounded-full -z-10"
+          ></div>
+          <i class="fas fa-chart-line text-[#c5ae9e]"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">استراتيجية الأعمال</h3>
+        <p class="text-gray-600 mb-6">
+          نطور استراتيجيات أعمال فعالة لتحقيق أهدافك طويلة المدى وتفوق على
+          المنافسين.
+        </p>
+        <a
+          href="#"
+          class="text-[#c5ae9e] font-medium flex items-center justify-end gap-2"
+        >
+          اقرأ المزيد
+          <i class="fas fa-arrow-left text-sm"></i>
+        </a>
+      </div>
 
+      <!-- Service 2 - Enhanced -->
+      <div
+        class="service-card bg-white p-8 rounded-xl shadow-md border border-gray-100 text-right hover:border-[#c5ae9e]"
+      >
+        <div class="text-[#2d3748] text-4xl mb-4 text-center relative">
+          <div
+            class="absolute top-0 left-0 w-16 h-16 bg-[#c5ae9e]/10 rounded-full -z-10"
+          ></div>
+          <i class="fas fa-hand-holding-usd text-[#c5ae9e]"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">الاستشارات المالية</h3>
+        <p class="text-gray-600 mb-6">
+          نصائح مالية خبيرة لتحسين استثماراتك وتقليل التكاليف وزيادة الربحية.
+        </p>
+        <a
+          href="#"
+          class="text-[#c5ae9e] font-medium flex items-center justify-end gap-2"
+        >
+          اقرأ المزيد
+          <i class="fas fa-arrow-left text-sm"></i>
+        </a>
+      </div>
 
+      <!-- Service 3 - Enhanced -->
+      <div
+        class="service-card bg-white p-8 rounded-xl shadow-md border border-gray-100 text-right hover:border-[#c5ae9e]"
+      >
+        <div class="text-[#2d3748] text-4xl mb-4 text-center relative">
+          <div
+            class="absolute top-0 left-0 w-16 h-16 bg-[#c5ae9e]/10 rounded-full -z-10"
+          ></div>
+          <i class="fas fa-users text-[#c5ae9e]"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">
+          استشارات الموارد البشرية
+        </h3>
+        <p class="text-gray-600 mb-6">
+          بناء قوة عاملة قوية مع حلولنا للموارد البشرية بما في ذلك اكتساب
+          المواهب وتطوير الموظفين.
+        </p>
+        <a
+          href="#"
+          class="text-[#c5ae9e] font-medium flex items-center justify-end gap-2"
+        >
+          اقرأ المزيد
+          <i class="fas fa-arrow-left text-sm"></i>
+        </a>
+      </div>
+    </div>
 
-    
+    <!-- Additional Services -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      <!-- Service 4 -->
+      <div
+        class="service-card bg-white p-8 rounded-xl shadow-md border border-gray-100 text-right hover:border-[#c5ae9e]"
+      >
+        <div class="text-[#2d3748] text-4xl mb-4 text-center relative">
+          <div
+            class="absolute top-0 left-0 w-16 h-16 bg-[#c5ae9e]/10 rounded-full -z-10"
+          ></div>
+          <i class="fas fa-laptop-code text-[#c5ae9e]"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">التحول الرقمي</h3>
+        <p class="text-gray-600 mb-6">
+          مساعدتك في رحلة التحول الرقمي لتعزيز كفاءة عملياتك وخدماتك.
+        </p>
+        <a
+          href="#"
+          class="text-[#c5ae9e] font-medium flex items-center justify-end gap-2"
+        >
+          اقرأ المزيد
+          <i class="fas fa-arrow-left text-sm"></i>
+        </a>
+      </div>
 
- 
- 
+      <!-- Service 5 -->
+      <div
+        class="service-card bg-white p-8 rounded-xl shadow-md border border-gray-100 text-right hover:border-[#c5ae9e]"
+      >
+        <div class="text-[#2d3748] text-4xl mb-4 text-center relative">
+          <div
+            class="absolute top-0 left-0 w-16 h-16 bg-[#c5ae9e]/10 rounded-full -z-10"
+          ></div>
+          <i class="fas fa-project-diagram text-[#c5ae9e]"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">إدارة المشاريع</h3>
+        <p class="text-gray-600 mb-6">
+          إدارة مشاريعك باحترافية لضمان التسليم في الوقت المحدد والميزانية
+          المقررة.
+        </p>
+        <a
+          href="#"
+          class="text-[#c5ae9e] font-medium flex items-center justify-end gap-2"
+        >
+          اقرأ المزيد
+          <i class="fas fa-arrow-left text-sm"></i>
+        </a>
+      </div>
+
+      <!-- Service 6 -->
+      <div
+        class="service-card bg-white p-8 rounded-xl shadow-md border border-gray-100 text-right hover:border-[#c5ae9e]"
+      >
+        <div class="text-[#2d3748] text-4xl mb-4 text-center relative">
+          <div
+            class="absolute top-0 left-0 w-16 h-16 bg-[#c5ae9e]/10 rounded-full -z-10"
+          ></div>
+          <i class="fas fa-balance-scale text-[#c5ae9e]"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">استشارات قانونية</h3>
+        <p class="text-gray-600 mb-6">
+          تقديم المشورة القانونية المتخصصة لحماية أعمالك وضمان الامتثال
+          التنظيمي.
+        </p>
+        <a
+          href="#"
+          class="text-[#c5ae9e] font-medium flex items-center justify-end gap-2"
+        >
+          اقرأ المزيد
+          <i class="fas fa-arrow-left text-sm"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-20 bg-gray-100" dir="rtl">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-[#c5ae9e] font-bold text-lg">آراء عملائنا</span>
+      <h2 class="text-4xl font-bold text-gray-800 mt-3 mb-6">
+        ماذا يقول عملاؤنا
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Testimonial 1 -->
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+        <div class="flex items-center mb-6">
+          <div
+            class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"
+          ></div>
+          <div class="mr-4">
+            <h4 class="font-bold text-lg">أحمد السيد</h4>
+            <p class="text-gray-600">مدير شركة التقنية</p>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4">
+          "ساعدتنا استشاراتهم في تحويل مسار شركتنا بشكل كامل، زادت أرباحنا بنسبة
+          40% خلال السنة الأولى فقط."
+        </p>
+        <div class="flex text-yellow-400">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+        <div class="flex items-center mb-6">
+          <div
+            class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"
+          ></div>
+          <div class="mr-4">
+            <h4 class="font-bold text-lg">ليلى محمد</h4>
+            <p class="text-gray-600">رئيسة قسم الموارد البشرية</p>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4">
+          "حلول الموارد البشرية التي قدمتها الشركة ساعدتنا في خفض معدل دوران
+          الموظفين بنسبة 35% خلال عام واحد."
+        </p>
+        <div class="flex text-yellow-400">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+        <div class="flex items-center mb-6">
+          <div
+            class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"
+          ></div>
+          <div class="mr-4">
+            <h4 class="font-bold text-lg">خالد عبد الله</h4>
+            <p class="text-gray-600">المدير المالي</p>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4">
+          "بفضل استشاراتهم المالية، استطعنا تحسين التدفق النقدي وتقليل التكاليف
+          التشغيلية بنسبة 25%."
+        </p>
+        <div class="flex text-yellow-400">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
