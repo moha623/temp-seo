@@ -1,5 +1,5 @@
 <div
-  class="w-full sticky top-0 z-50 bg-custom-bg shadow-sm h-[130px] bg-[#fffdfa] "
+  class="w-full sticky top-0 z-50 bg-custom-bg shadow-sm h-[130px] bg-[#fffdfa]"
   dir="rtl"
 >
   <div class="container mx-auto my-auto text-center">
@@ -71,7 +71,7 @@
 
     <!-- Mobile menu -->
     <div
-      class="md:hidden bg-[#fffdfa] shadow-lg rounded-b-lg overflow-hidden transition-all duration-300 ease-in-out"
+      class="md:hidden bg-[#fffdfa] shadow-lg rounded-b-lg overflow-hidden transition-all duration-300 ease-in-out max-h-[60vh] overflow-y-auto"
       *ngIf="menuOpen"
     >
       <div class="flex flex-col">
@@ -167,9 +167,15 @@
             >
           </div>
         </div>
+        <!-- Inside your mobile menu div, add this at the bottom -->
+        <button
+          (click)="openWhatsApp()"
+          class="flex items-center justify-center font-medium text-lg text-[#c5ae9e] hover:bg-[#9e775e] hover:text-white border border-[#c5ae9e] px-6 py-3 rounded-full m-4"
+        >
+          <i class="fab fa-whatsapp ml-2"></i>
+          راسلنا على واتساب
+        </button>
       </div>
     </div>
   </div>
 </div>
-
-
