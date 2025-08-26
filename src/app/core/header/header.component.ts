@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,28 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+  isNavOpen = false; // track nav toggle state
 
-
- 
-
-  menuOpen = false;
-  newsDropdownOpen = false;
-  galleryDropdownOpen = false;
-
-  // Toggle mobile menu open/close
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
+  toggleNav() {
+    this.isNavOpen = !this.isNavOpen;
   }
 
-  // Toggle dropdowns in menu
-  toggleDropdown(dropdown: 'news' | 'gallery') {
-    if (dropdown === 'news') {
-      this.newsDropdownOpen = !this.newsDropdownOpen;
-    } else if (dropdown === 'gallery') {
-      this.galleryDropdownOpen = !this.galleryDropdownOpen;
-    }
-  }
- 
+  
   openWhatsApp() {
     const phone = '21620678780'; // Tunisia number without plus
     const message = 'مرحباً! أريد الاستفسار.';

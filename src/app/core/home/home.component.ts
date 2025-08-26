@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +19,8 @@ export class HomeComponent {
       alt: 'مطبخ عصري',
     },
   ];
+whatsappButtonBgGradient: any;
+Math: any;
   isActive(index: number): boolean {
     return this.currentIndex === index;
   }
@@ -31,4 +33,42 @@ export class HomeComponent {
   showNext() {
     this.currentIndex = (this.currentIndex + 1) % this.images.length;
   }
+
+  menuOpen = false;
+  newsDropdownOpen = false;
+  galleryDropdownOpen = false;
+
+  // Toggle mobile menu open/close
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  // Toggle dropdowns in menu
+  toggleDropdown(dropdown: 'news' | 'gallery') {
+    if (dropdown === 'news') {
+      this.newsDropdownOpen = !this.newsDropdownOpen;
+    } else if (dropdown === 'gallery') {
+      this.galleryDropdownOpen = !this.galleryDropdownOpen;
+    }
+  }
+ 
+  openWhatsApp() {
+    const phone = '21620678780'; // Tunisia number without plus
+    const message = 'مرحباً! أريد الاستفسار.';
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+ menuItems = [
+    { label: 'Home', active: true },
+    { label: 'About', active: false },
+    { label: 'Start A Project', active: false },
+    { label: 'Contact', active: false },
+  ];
+
+  setActive(selected: any) {
+    this.menuItems.forEach(item => (item.active = false));
+    selected.active = true;
+  }
+  
+  
 }

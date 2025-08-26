@@ -1,158 +1,70 @@
-
-   
-              body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: #fffdfa;
+ 
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
         }
         
-        .hero-header {
-            margin-top: -100px;
-            padding-top: 150px;
-            background-size: cover;
+        .gradient-bg {
+            background: linear-gradient(120deg, #3b82f6 0%, #8b5cf6 100%);
         }
-
-        .header-carousel::before {
-            position: absolute;
-            content: "";
-            top: 0;
-            left: 0;
-            width: calc(50% + 45px);
-            height: 100%;
-            background: #ba9f8c;
-            z-index: -1;
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
         }
-
-        @media (max-width: 1024px) {
-            .header-carousel::before {
-                width: 100%;
-                height: calc(100% - 90px);
+        
+        .floating-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .floating-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-item {
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            margin: 8px 0;
+        }
+        
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateX(-8px);
+        }
+        
+        .pulse-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #8b5cf6;
+            box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 12px rgba(139, 92, 246, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
             }
         }
         
-        .rtl-support {
-            direction: rtl;
-            text-align: right;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
-        .arabic-font {
-            font-family: 'Tajawal', sans-serif;
-        }
-        
-        .border-custom {
-            border-color: #c5ae9e;
-        }
-        
-        .hover-bg-custom:hover {
-            background-color: #c5ae9e;
-        }
-        
-        .carousel-image {
-            object-fit: cover;
-            height: 100%;
-            width: 100%;
-        }
-        
-        .carousel-control {
-            background-color: rgba(255, 255, 255, 0.5) !important;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .carousel-control:hover {
-            background-color: rgba(255, 255, 255, 0.8) !important;
-        }
-        
-        .logo-text {
-            color: #333;
-            font-weight: bold;
-            letter-spacing: 0.05em;
-        }
-        
-        .whatsapp-button {
-            border-color: #333;
-            color: #333;
-        }
-        
-        .whatsapp-button:hover {
-            background-color: #333;
-            color: #fffdfa;
-        }
-
-
-        .mobile-menu {
-      transition: all 0.5s ease-in-out;
-      transform: translateY(-100%);
-      opacity: 0;
-      height: 0;
-      overflow: hidden;
-    }
-    
-    .mobile-menu.active {
-      transform: translateY(0);
-      opacity: 1;
-      height: auto;
-    }
-    
-    .menu-item {
-      position: relative;
-      transition: all 0.3s ease;
-    }
-    
-    .menu-item::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 1px;
-      bottom: -2px;
-      left: 0;
-      background-color: #c5ae9e;
-      transition: width 0.3s ease;
-    }
-    
-    .menu-item:hover::after {
-      width: 100%;
-    }
-    
-    .dropdown-menu {
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.3s ease;
-    }
-    
-    .menu-item:hover .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-    
-    .whatsapp-btn {
-      transition: all 0.3s ease;
-      border-color: #c5ae9e;
-    }
-    
-    .whatsapp-btn:hover {
-      background-color: #9e775e;
-      color: white;
-    }
-    
-    .mobile-menu-item {
-      transition: all 0.3s ease;
-      border-bottom: 1px solid rgba(197, 174, 158, 0.2);
-    }
-    
-    .mobile-menu-item:hover {
-      background-color: rgba(197, 174, 158, 0.1);
-    }
-    
-    .dropdown-icon {
-      transition: transform 0.3s ease;
-    }
-    
-    .dropdown-icon.rotated {
-      transform: rotate(180deg);
-    }
+ 

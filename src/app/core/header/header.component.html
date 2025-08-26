@@ -1,10 +1,10 @@
-<div
+<!-- <div
   class="w-full sticky top-0 z-50 bg-custom-bg shadow-sm h-[130px] bg-[#fffdfa]"
   dir="rtl"
 >
-  <div class="container mx-auto my-auto text-center">
-    <nav class="flex items-baseline justify-between py-4 px-4 md:px-20">
-      <!-- Contact Button & Mobile Menu -->
+  <div class="    text-center">
+    <nav class="flex items-baseline justify-between py-4 px-4  ">
+ 
       <div class="text-left flex items-center space-x-4">
         <button
           (click)="toggleMenu()"
@@ -51,7 +51,7 @@
           </svg>
         </button>
 
-        <!-- WhatsApp Button (desktop lg and above) -->
+ 
         <button
           (click)="openWhatsApp()"
           class="hidden lg:flex items-center font-medium text-xl text-[#c5ae9e] hover:bg-[#9e775e] hover:text-white border border-[#c5ae9e] px-6 py-2 rounded-full whattsapp-btn"
@@ -60,16 +60,13 @@
           راسلنا على واتساب
         </button>
       </div>
-
-      <!-- Logo -->
       <img
         src="https://images.unsplash.com/vector-1739809075051-f1f6ea8fc6d1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHBuZ3xlbnwwfHwwfHx8MA%3D%3D"
         alt="logo"
-        class="w-20 h-20"
+        class="w-20 h-20 header-logo-3d"
       />
     </nav>
-
-    <!-- Mobile menu -->
+ 
     <div
       class="md:hidden bg-[#fffdfa] shadow-lg rounded-b-lg overflow-hidden transition-all duration-300 ease-in-out max-h-[60vh] overflow-y-auto"
       *ngIf="menuOpen"
@@ -105,8 +102,185 @@
           class="mobile-menu-item px-6 py-4 text-[#c5ae9e] text-lg font-medium hover:bg-[#f0ebe6]"
           >الفريق</a
         >
+ 
+        <div class="mobile-menu-item">
+          <a
+            href="#"
+            (click)="toggleDropdown('news')"
+            class="flex justify-between items-center px-6 py-4 text-[#c5ae9e] text-lg font-medium cursor-pointer hover:bg-[#f0ebe6]"
+          >
+            <span>الأخبار</span>
+            <i
+              [ngClass]="{
+                'fas fa-chevron-down transition-transform duration-300': true,
+                'rotate-180': newsDropdownOpen
+              }"
+            ></i>
+          </a>
+          <div
+            *ngIf="newsDropdownOpen"
+            class="bg-[#f8f5f2] pl-8 flex flex-col space-y-2"
+          >
+            <a href="#" class="block px-4 py-2 text-[#9e775e] hover:underline"
+              >آخر الأخبار</a
+            >
+            <a href="#" class="block px-4 py-2 text-[#9e775e] hover:underline"
+              >البيانات الصحفية</a
+            >
+            <a href="#" class="block px-4 py-2 text-[#9e775e] hover:underline"
+              >الفعاليات</a
+            >
+          </div>
+        </div>
+ 
+        <div class="mobile-menu-item">
+          <a
+            href="#"
+            (click)="toggleDropdown('gallery')"
+            class="flex justify-between items-center px-6 py-4 text-[#c5ae9e] text-lg font-medium cursor-pointer hover:bg-[#f0ebe6]"
+          >
+            <span>المعرض</span>
+            <i
+              [ngClass]="{
+                'fas fa-chevron-down transition-transform duration-300': true,
+                'rotate-180': galleryDropdownOpen
+              }"
+            ></i>
+          </a>
+          <div
+            *ngIf="galleryDropdownOpen"
+            class="bg-[#f8f5f2] pl-8 flex flex-col space-y-2"
+          >
+            <a href="#" class="block px-4 py-2 text-[#9e775e] hover:underline"
+              >معرض الصور</a
+            >
+            <a href="#" class="block px-4 py-2 text-[#9e775e] hover:underline"
+              >الجولة الافتراضية</a
+            >
+            <a href="#" class="block px-4 py-2 text-[#9e775e] hover:underline"
+              >معرض الفيديو</a
+            >
+          </div>
+        </div>
+ 
+        <button
+          (click)="openWhatsApp()"
+          class="flex items-center justify-center font-medium text-lg text-[#c5ae9e] hover:bg-[#9e775e] hover:text-white border border-[#c5ae9e] px-6 py-3 rounded-full m-4"
+        >
+          <i class="fab fa-whatsapp ml-2"></i>
+          راسلنا على واتساب
+        </button>
+      </div>
+    </div>
+  </div>
+  
+</div> -->
+<!-- <div class="w-full top-0 z-50 h-[80px] sticky  bg-black" dir="rtl" >
+  <div class="text-center glass-card ">
+    <nav class="flex items-baseline justify-around py-4 px-4">
+      <div class="text-left flex items-center space-x-4">
+        <button
+          (click)="toggleMenu()"
+          aria-label="Toggle menu"
+          class="text-[#b7b6b4] md:hidden"
+        >
+          <svg
+            *ngIf="!menuOpen"
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            viewBox="0 0 50 50"
+            class="text-[#b7b6b4] ml-3"
+          >
+            <path
+              d="M 2 9 L 2 11 L 48 11 L 48 9 L 2 9 z M 2 24 L 2 26 L 48 26 L 48 24 L 2 24 z M 2 39 L 2 41 L 48 41 L 48 39 L 2 39 z"
+            ></path>
+          </svg>
 
-        <!-- News Dropdown -->
+          <svg
+            *ngIf="menuOpen"
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            viewBox="0 0 50 50"
+            class="text-[#b7b6b4] ml-3"
+          >
+            <line
+              x1="10"
+              y1="10"
+              x2="40"
+              y2="40"
+              stroke="#b7b6b4"
+              stroke-width="4"
+            />
+            <line
+              x1="40"
+              y1="10"
+              x2="10"
+              y2="40"
+              stroke="#b7b6b4"
+              stroke-width="4"
+            />
+          </svg>
+        </button>
+
+        <button
+          (click)="openWhatsApp()"
+          class="hidden lg:flex items-center font-medium text-xl text-white hover:text-white border px-6 py-2 rounded-full whattsapp-btn"
+        >
+          <i class="fab fa-whatsapp ml-2"></i>
+          راسلنا على واتساب
+        </button>
+      </div>
+      <div class="logo-container">
+        <span *ngIf="!scrolled" class="logo-text text-white">{{
+          logoText
+        }}</span>
+        <img
+          *ngIf="scrolled"
+          src="https://images.unsplash.com/vector-1739809075051-f1f6ea8fc6d1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHBuZ3xlbnwwfHwwfHx8MA%3D%3D"
+          alt="logo"
+          class="w-10 h-10 header-logo-3d"
+        />
+      </div>
+    </nav>
+
+    <div
+      class="md:hidden bg-[#fffdfa] shadow-lg rounded-b-lg overflow-hidden transition-all duration-300 ease-in-out max-h-[60vh] overflow-y-auto"
+      *ngIf="menuOpen"
+    >
+      <div class="flex flex-col">
+        <a
+          href="#"
+          class="mobile-menu-item px-6 py-4 text-lg font-medium hover:bg-[#f0ebe6]"
+          >الرئيسية</a
+        >
+        <a
+          href="#"
+          class="mobile-menu-item px-6 py-4 text-lg font-medium hover:bg-[#f0ebe6]"
+          >الفلل</a
+        >
+        <a
+          href="#"
+          class="mobile-menu-item px-6 py-4 text-lg font-medium hover:bg-[#f0ebe6]"
+          >المجمع</a
+        >
+        <a
+          href="#"
+          class="mobile-menu-item px-6 py-4 text-lg font-medium hover:bg-[#f0ebe6]"
+          >الوجهة</a
+        >
+        <a
+          href="#"
+          class="mobile-menu-item px-6 py-4 text-lg font-medium hover:bg-[#f0ebe6]"
+          >استثمار</a
+        >
+        <a
+          href="#"
+          class="mobile-menu-item px-6 py-4 text-lg font-medium hover:bg-[#f0ebe6]"
+          >الفريق</a
+        >
+
         <div class="mobile-menu-item">
           <a
             href="#"
@@ -137,7 +311,6 @@
           </div>
         </div>
 
-        <!-- Gallery Dropdown -->
         <div class="mobile-menu-item">
           <a
             href="#"
@@ -167,10 +340,11 @@
             >
           </div>
         </div>
-        <!-- Inside your mobile menu div, add this at the bottom -->
+
         <button
           (click)="openWhatsApp()"
-          class="flex items-center justify-center font-medium text-lg text-[#c5ae9e] hover:bg-[#9e775e] hover:text-white border border-[#c5ae9e] px-6 py-3 rounded-full m-4"
+          class="flex items-center justify-center font-medium text-lg text-[#c5ae9e] hover:bg-gradient-to-r hover:from-[#b1d1c7] hover:via-[#8db8cb] hover:to-[#94a8c7] hover:text-white border border-[#c5ae9e] px-6 py-3 rounded-full m-4"
+          [ngStyle]="{ background: whatsappButtonBgGradient }"
         >
           <i class="fab fa-whatsapp ml-2"></i>
           راسلنا على واتساب
@@ -179,3 +353,242 @@
     </div>
   </div>
 </div>
+<div class="flex items-center justify-center  min-h-screen bg-gradient-to-tr from-emerald-700 via-white to-emerald-400">
+ 
+  <section class="w-full max-w-7xl items-center overflow-hidden shadow-2xl">
+ 
+    <section class="relative overflow-hidden py-16 text-gray-800">
+   
+      <div
+        class="absolute -top-20 -right-20 w-96 h-96 bg-[#033580] opacity-10 rounded-full"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-80 h-80 bg-[#033580] opacity-10 rounded-full"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col md:flex-row items-center">
+       
+          <div class="md:w-1/2 mb-12 md:mb-0 leading-8">
+            <div class="mb-6">
+              <span
+                class="bg-white/30 text-gray-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm border border-white/50"
+              >
+                الاستشارات الاحترافية منذ 2005
+              </span>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-7">
+              حلول استشارية متكاملة<br />
+              <span class="gradient-text">لتحقيق أهداف أعمالك</span>
+            </h1>
+
+            <p class="text-lg mb-8 opacity-90 max-w-md">
+              نقدم حلولاً استشارية احترافية لدفع نمو شركتك وتعزيز مكانتك
+              التنافسية في السوق من خلال خبرة تزيد عن 15 عاماً
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 mb-12">
+              <a
+                href="#"
+                class="floating-card bg-white/30 hover:bg-white/40 text-gray-700 border border-white/50 font-bold py-3 px-8 rounded-xl text-center transition-all duration-300 transform hover:-translate-y-1"
+              >
+                اطلب استشارة مجانية
+                <i class="fas fa-arrow-left mr-2"></i>
+              </a>
+              <a
+                href="#"
+                class="floating-card bg-white/30 hover:bg-white/40 text-gray-700 border border-white/50 font-bold py-3 px-8 rounded-xl text-center transition-all duration-300 transform hover:-translate-y-1"
+              >
+                تعرف على خدماتنا
+                <i class="fas fa-book-open mr-2"></i>
+              </a>
+            </div>
+
+    
+          </div>
+
+ 
+          <div class="md:w-1/2 flex justify-center">
+            <div class="relative">
+              <div class="relative w-80 h-80">
+                <div
+                  class="glassy-bubble bubble-1 rounded-full absolute animate-float-slow"
+                ></div>
+                <div
+                  class="glassy-bubble bubble-2 rounded-full absolute animate-float"
+                ></div>
+                <div
+                  class="glassy-bubble bubble-3 rounded-full absolute animate-float-slow"
+                ></div>
+                <div
+                  class="glassy-bubble bubble-4 rounded-full absolute animate-float-fast"
+                ></div>
+                <div
+                  class="glassy-bubble bubble-5 rounded-full absolute animate-float"
+                ></div>
+
+                <div
+                  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/20 rounded-full w-64 h-64 flex items-center justify-center animate-float border border-white/20"
+                >
+                  <div
+                    class="bg-white/20 rounded-full w-52 h-52 flex items-center justify-center border border-white/20"
+                  >
+                    <div
+                      class="bg-gradient-to-br from-primary to-primary-dark rounded-xl w-40 h-40 flex items-center justify-center shadow-lg border border-white/20"
+                    >
+                      <i class="fas fa-chart-network text-4xl text-white"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+ 
+    </section>
+
+
+    <div
+      class="hidden md:block absolute top-40 left-10 w-20 h-20 bg-[#033580] opacity-10 rounded-full animate-float"
+    ></div>
+    <div
+      class="hidden md:block absolute top-1/2 right-20 w-12 h-12 bg-[#033580] opacity-10 rounded-lg rotate-45 animate-float"
+      style="animation-delay: 2s"
+    ></div>
+  </section>
+</div> -->
+
+<div class="h-screen bg-[#ecece9] flex items-center justify-center relative">
+  <!-- Mobile Menu Toggle Button -->
+  <button
+    id="mobile-menu-toggle"
+    class="absolute top-4 left-4 z-50 p-3 rounded-md bg-white/40 text-gray-700 md:hidden focus:outline-none"
+   (click)="toggleNav()" aria-label="Toggle navigation menu"
+  >
+    <i class="fas fa-bars text-2xl"></i>
+  </button>
+
+  <!-- Content - Centered Rooster & Main Titles -->
+  <div
+    class="absolute left-0 top-0 w-full h-screen flex items-center justify-end pointer-events-none z-20"
+  >
+    <div class="md:w-1/2 mb-12 md:mb-0 leading-8 px-4">
+      <div class="mb-6">
+        <span
+          class="bg-white/30 text-gray-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm border border-white/50"
+        >
+          الاستشارات الاحترافية منذ 2005
+        </span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-7">
+        حلول استشارية متكاملة<br />
+        <span class="gradient-text leading-normal">لتحقيق أهداف أعمالك</span>
+      </h1>
+
+      <p class="text-lg mb-8 opacity-90 max-w-md">
+        نقدم حلولاً استشارية احترافية لدفع نمو شركتك وتعزيز مكانتك التنافسية
+        في السوق من خلال خبرة تزيد عن 15 عاماً
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 mb-12">
+        <a
+          href="#"
+          class="floating-card bg-white/30 hover:bg-white/40 text-gray-700 border border-white/50 font-bold py-3 px-8 rounded-xl text-center transition-all duration-300 transform hover:-translate-y-1"
+        >
+          اطلب استشارة مجانية
+          <i class="fas fa-arrow-left mr-2"></i>
+        </a>
+        <a
+          href="#"
+          class="floating-card bg-white/30 hover:bg-white/40 text-gray-700 border border-white/50 font-bold py-3 px-8 rounded-xl text-center transition-all duration-300 transform hover:-translate-y-1"
+        >
+          تعرف على خدماتنا
+          <i class="fas fa-book-open mr-2"></i>
+        </a>
+      </div>
+
+      <!-- Stats -->
+    </div>
+  </div>
+
+  <!-- Right Side Demi-Circle Navigation -->
+  <div
+    id="right-nav"
+    class="absolute right-0 top-0 h-full flex items-center z-30 transition-transform duration-300 ease-in-out
+    md:flex hidden"
+  >
+    <div class="relative">
+      <!-- demi-circle background -->
+      <div
+        class="w-[570px] h-screen bg-[#f35f47] rounded-l-full absolute right-0 top-1/2 -translate-y-1/2 z-[-1]"
+      ></div>
+      <!-- Navigation items vertically centered -->
+
+      <nav
+        class="relative w-80 h-full rounded-r-full flex flex-col justify-center items-center"
+      >
+        <ul class="text-gray-800 space-y-2 text-center text-lg font-medium">
+          <li class="nav-item">
+            <a href="#" class="block px-8 py-3 rounded transition flex items-center">
+              <i class="fas fa-home ml-2"></i>
+              <span>الرئيسية</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="block px-8 py-3 rounded transition flex items-center">
+              <i class="fas fa-info-circle ml-2"></i>
+              <span>من نحن</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="block px-8 py-3 rounded transition flex items-center">
+              <i class="fas fa-briefcase ml-2"></i>
+              <span>أعمالنا</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="block px-8 py-3 rounded transition flex items-center">
+              <i class="fas fa-rocket ml-2"></i>
+              <span>ابدأ مشروعك</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="block px-8 py-3 rounded transition flex items-center">
+              <i class="fas fa-envelope ml-2"></i>
+              <span>اتصل بنا</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Social Media Icons -->
+        <div class="flex gap-4 mt-12">
+          <a
+            href="#"
+            class="w-10 h-10 rounded-full glass-effect flex items-center justify-center text-gray-700 hover:text-purple-600 transition"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 rounded-full glass-effect flex items-center justify-center text-gray-700 hover:text-purple-600 transition"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 rounded-full glass-effect flex items-center justify-center text-gray-700 hover:text-purple-600 transition"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+ 
+
